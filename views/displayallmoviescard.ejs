@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainSec {
+            width: 100%;
+            margin: auto;
+            padding: 0 4%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            text-align: center;
+        }
+
+        .movieCol {
+            background-color: #F0F0F1;
+            padding: 10% 0;
+            height: 500px;
+            margin-top: 10%;
+            position: relative;
+        }
+
+        i {
+            position: absolute;
+            right: 2%;
+            top: 2%;
+            font-size: 25px;
+            color: black;
+        }
+
+        /* .editIcon {
+            position: absolute;
+            right: 2%;
+            top: 2%;
+        } */
+
+        h3 {
+            font-weight: 700;
+            color: black;
+        }
+
+        form {
+            width: 50%;
+            padding: 4%;
+            margin: 0;
+        }
+
+        input {
+            width: 100%;
+            color: black;
+            padding: 10px;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid rgb(220, 220, 220);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid rgb(220, 220, 220);
+        }
+
+        .rowgap {
+            margin-top: 4%;
+        }
+
+        .btn {
+            margin-bottom: 3%;
+            padding: 3% 0;
+            background: red;
+            color: white;
+            border-radius: 0;
+            width: 50%;
+        }
+
+        .btn:hover {
+            background-color: rgb(224, 0, 0);
+            color: white;
+        }
+
+        .heading {
+            font-weight: 700;
+            text-align: left;
+            font-size: 35px;
+        }
+
+        .poster {
+            width: 150px;
+        }
+
+        .search {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid gainsboro;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/javascripts/addmovie.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9ff8baa639.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <section class="row mainSec">
+
+        <!-- <div class="row">
+            <div class="col-lg-12">
+                <input type="text" placeholder="Search here.." class="search" id="searchID">
+            </div>
+        </div> -->
+        
+                
+          
+
+                <div class="row rowgap">
+                    <div class="col-lg-6">
+                        <h3 class="heading"><font style="color:green" >List of Movies To Be"</font><font style="color: red;">Release</font>
+                        </h3>
+                    </div>
+        
+            <div class="col-lg-6" style="display: flex; justify-content: right;">
+                <a href="/movie/movieinterface">
+                    <i class="fa-solid fa-plus" style="position: relative;"></i>
+                    <!-- <img src="/images/plus.png" width="60" height="60"> -->
+                </a>
+            </div>
+        </div>
+
+
+        <% data.map((item, i)=> { %>
+            <div class="col-lg-4">
+                <div class="movieCol">
+                    <!-- <a href="/movie/showmoviepostertoedit?movieid=<%= item.movieid%>" class="poster"><img
+                            src="/images/<%= item.poster %>" class="poster">
+                    </a>
+                    <a href="/movie/showmovietoedit?mid=<%= item.movieid %>">
+                        <i class="fa-solid fa-pen-to-square" class="editIcon"></i>
+                        <img src="/images/edit.png" width="25" class="editIcon"> -->
+                        <td><a href='/movie/showmoviepostertoedit?mid=<%=item.movieid %>&poster=<%=item.poster%>&moviename=<%=item.moviename%>'><img src='/images/<%=item.poster%>' width="95"></a></td>
+                        <td><a href='/movie/showmovietoedit?mid=<%=item.movieid %>' style="text-decoration: none;"><i class="fa-solid fa-pen-to-square" class="editIcon"></i></a></td>  
+                    </a>
+                    <br><br>
+                    <h3>
+                        <%= item.moviename %>
+                    </h3>
+                    <p style="margin: 0;">"<%= item.description %>"</p>
+                    <p style="margin: 0;">
+                        <%= item.releasedate %>, <%= item.cinema %>, <%= item.address %>
+                    </p>
+                    <p style="margin: 0;">
+                        <%= item.cityname %>, <%= item.statename %>
+                    </p><br>
+                    <button class="btn">Books Tickets</button>
+                </div>
+            </div>
+            <% }) %>
+
+
+    </section>
+
+    <!-- <section class="row mainSec" id="filterSecID">
+
+    </section> -->
+
+</body>
+
+</html>

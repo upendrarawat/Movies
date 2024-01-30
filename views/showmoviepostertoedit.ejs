@@ -1,0 +1,17 @@
+
+
+<html>
+    <body>
+        <center>
+           <form action="/movie/editmovieposter" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="pid" value="<%=data.mid %>">
+            <input type="hidden" name="oldposter" value="<%=data.poster %>">
+            <h1><%=data.moviename %></h1><br>
+            <img src="/images/<%=data.poster %>"  width="300"><br><br>
+            <b>Select new picture:</b><br><br>
+            <input type="file" name="poster" required><br><br>
+            <input type="submit" value="Edit Poster">
+        </form>    
+        </center>
+    </body>
+</html>

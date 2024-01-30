@@ -1,0 +1,120 @@
+<style>
+    .maincontainer{
+        width:100vw;
+        height:100vh;
+        background: #bdc3c7;
+        display: flex;
+         
+        flex-direction: column;
+         
+    }
+    .box{width:100%;
+        height: 50px;;
+        background:#000;
+       
+        
+        
+    }
+    .appbarStyle{
+        width:98%;
+        display:flex;
+        align-items: center;
+        
+    }
+    .logoStyle{
+        font-family: Kanit;font-size: 32px;font-weight: bold;
+        color:#fff; margin-left: 1%;
+    }
+    .logoutStyle{
+        font-family: Kanit;font-size: 16px;font-weight: bold;
+        color:#fff; margin-left: auto;
+    }
+    .sideBarLeft{
+        width:15%;
+        height:100%;
+        background:#fff; 
+    }
+    .adminTextStyle{
+        font-family: Kanit;font-size: 16px;font-weight: bold;
+        display: flex; justify-content: center;
+    
+    }
+    .contactTextStyle{
+        font-family: Kanit;font-size: 12px;font-weight: bold;
+        display: flex; align-items: center;color:cornflowerblue;
+        flex-direction: column;
+    
+    }
+    .menuStyle{
+        font-family: Kanit;font-size: 16px;font-weight: bold;
+        display:flex;margin-left: 40px;flex-direction: column;
+        margin-top: 20px;
+    }
+    .itemstyle{
+        margin-top: 20px;
+    }
+    .contentStyle{
+        margin:20px;
+        width: 100%;
+    }
+     </style>
+ 
+
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/99fc0d74eb.js" crossorigin="anonymous"></script>
+
+</head>
+
+   <div class="maincontainer">
+      <div class="box">
+        <div class="appbarStyle">
+            <span class="logoStyle">Digital World</span>
+            <span class="logoutStyle"></i></span>
+            <div class="itemstyle"></i> <a  style="text-decoration: none; color:red;" href="/admin/logout">LOGOUT</a></div>
+        </div>
+       </div>
+
+
+    <div style="display: flex; flex-direction: row; height:90%; "> 
+    
+    <div class="sideBarLeft">
+       <div style="display: flex; align-items: center; justify-content: center;margin: 6px;">
+         <img src="/images/<%=userdata.poster %>" style="width:70px;height: 70px; border-radius: 35px;"/>
+       </div>
+       <div class="adminTextStyle">
+         <%=userdata.adminname %>
+       </div>
+       <div class="contactTextStyle">
+        <div><%=userdata.emailid %></div>
+        <div>+91<%=userdata.mobileno %></div>
+      </div>
+      <div class="menuStyle">
+        
+        <div class="itemstyle"> <a  style="text-decoration: none; color: black;" href="/movie/movieinterface" target="mw"><img src='/images/tisn.gif' width='50' ><img src='/images/Mo.gif' width='100' ></a></div>
+       <div class="itemstyle"> <a style="width:70px;height: 70px; border-radius: 35px;" href="/movie/displayallmovies" target="mw"><img src='/images/bion.gif' width='50' ><img src='/images/cio.gif' width='100' ></a></div>
+      
+  
+       <div class="itemstyle"> <a  style="text-decoration: none; color: #000;" href="/admin/logout"><img src='/images/logout.gif' width='50' ><img src='/images/whi.gif' width='100' ></a></div>
+
+    </div>
+  </div>
+  
+  
+  <div class="contentStyle" >
+     <iframe name="mw" frameborder="0" width="100%" height="105%" scrolling="no" ></iframe>
+  </div>
+
+
+</div>
+  
+
+   
+
+      </div>
+</html>

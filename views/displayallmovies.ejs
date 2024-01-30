@@ -1,0 +1,105 @@
+<style>
+    .maincontainor {
+        width: 100vw;
+        height: auto;
+        background:white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .box {
+        width: auto;
+        height: auto;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px
+    }
+
+    .headStyle {
+        font-family: kanit;
+        font-size: 16x;
+        font-weight: bold;
+
+    }
+</style>
+
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    </head>
+   
+            <div class="maincontainer">
+                <div class="box">
+                    
+                    <div class="col-sm-6" style="width:auto;font-family: Kanit;font-size: 24px;font-weight: bold; display: flex; flex-direction: row;">
+                        <div style="display: flex;flex-direction: row;">
+                        <span><img src='/images/bioof.gif' width='205'></span>
+                        <span><img src='/images/cio.gif' width='200'></span>
+                        </div>
+                        <div style="margin-left: auto;">
+                         <a href="/movie/movieinterface"> <img src='/images/list.gif' width='100'></a>
+                        </div>
+                    </div>
+
+        
+
+            <table class="table table-bordered" style="width:1000px">
+
+        <table class="table table-dark table-striped"style="width:1000px">
+        <thead>
+        <tr>
+            <th scope="col"><img src='/images/has.gif'width='75' ></th>
+    
+            <th scope="table" style="width:200px"><img src='/images/movie.gif'width='75' ></th>
+            <th scope="col"><img src='/images/Release.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Discription.gif' width='75' ></th>
+            <th scope="col"><img src='/images/States.gif' width='75' ></th>
+            <th scope="col"><img src='/images/City.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Address.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Cinema Hall.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Movie Type.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Languages.gif' width='75'  ></th>
+            <th scope="col"><img src='/images/Rating.gif' width='75' ></th>
+            <th scope="col"><img src='/images/Poster.gif' width='75'></th>
+            <th scope="col"><img src='/images/Action.gif' width='75' ></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          
+    <% data.map((item,i)=>{ %>
+        <tr>
+           
+            <th class="table table-bordered border-primary"><img src='/images/has.gif' width='100'></th>
+           <i><td><%=item.movieid%>/<%=item.moviename %></td></i>
+            <td><%=item.releasedate %></td>
+            <td><%=item.discription %></td>
+            <td><%=item.statename %></td>
+           <td><%=item.cityname %></td>
+            <td><%=item.address%></td>
+            <td><%=item.cinema %></td>
+            <td><%=item.movietype %></td>
+            <td><%=item.language %></td>
+            <td><%=item.rating %></td>
+            <td><a href='/movie/showmoviepostertoedit?mid=<%=item.movieid %>&poster=<%=item.poster%>&moviename=<%=item.moviename%>'><img src='/images/<%=item.poster%>' width="95"></a></td>
+        <td><a href='/movie/showmovietoedit?mid=<%=item.movieid %>' style="text-decoration: none;"><img src='/images/kal.gif' width='75'></a></td>  
+        
+        </tr>
+<% }) %>
+        </tbody>
+        </table>
+ 
+
+    </div>
+</div>
+
+</html>
